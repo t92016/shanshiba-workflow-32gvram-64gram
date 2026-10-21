@@ -1,3 +1,5 @@
+> **個人備份安裝前提示：本版要求 32GB 顯存（VRAM）＋64GB 系統記憶體（RAM）。先讀 [AGENTS.md](AGENTS.md) 與 [hardware-requirements.json](hardware-requirements.json)，核對本機資源後才進行大型下載或安裝。**
+
 # AGENT_SETUP：給 AI agent 的安裝手冊
 
 > 寫給 Claude Code、Codex 等 AI agent：照順序做，每一步做完都有「怎麼確認成功」。人也可以照著做。
