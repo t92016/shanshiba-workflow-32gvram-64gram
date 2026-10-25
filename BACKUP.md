@@ -1,28 +1,15 @@
-# 備份紀錄
+# 備份與更新紀錄
 
-## 來源與範圍
+原分享者：三師爸。依作者要求署名：[山獅霸的多重宇宙（https://github.com/mathruffian-dot）](https://github.com/mathruffian-dot)。
 
-原分享者：三師爸；原作者正式署名為 **[山獅霸的多重宇宙（mathruffian-dot）](https://github.com/mathruffian-dot)**。
-原始專案：[shanshiba-workflow-32gvram-64gram](https://github.com/mathruffian-dot/shanshiba-workflow-32gvram-64gram)。本備份由 [t92016](https://github.com/t92016) 維護，非原作者官方發布。
+原始專案：[mathruffian-dot/shanshiba-workflow-32gvram-64gram](https://github.com/mathruffian-dot/shanshiba-workflow-32gvram-64gram)。本份為 t92016 個人非商業公開備份，非官方發布。
 
-**本 repo 適用配置：32GB 顯存（VRAM）＋64GB 系統記憶體（RAM）。顯存與系統記憶體是兩項不同規格，不能互相加總替代。**
+授權：程式主要 [MIT](https://github.com/t92016/shanshiba-workflow-32gvram-64gram/blob/main/LICENSE)，tools/flashvsr_cli.py 為 GPL-3.0-or-later；文件、技能文字與素材依 [CC BY-NC 4.0](https://github.com/t92016/shanshiba-workflow-32gvram-64gram/blob/main/LICENSE-docs.md)（[授權連結](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hant)），須姓名標示且不得用於商業目的。保留 [THIRD_PARTY_NOTICES.md](https://github.com/t92016/shanshiba-workflow-32gvram-64gram/blob/main/THIRD_PARTY_NOTICES.md)、各檔案授權及 POUND0423 改編技能聲明。本 repo 不包含模型權重；模型與服務各有條款。
 
-| 安裝前核對 | 要求與限制 |
-|---|---|
-| NVIDIA GPU 專用顯存 | 32GB 等級或以上；仍需核對 GPU 架構、驅動與 CUDA 相容性 |
-| 系統實體記憶體 | 64GB 或以上；實體容量不等於當下可用量 |
-| 儲存空間 | NVMe SSD；模型約 145GB，另須工作檔、快取與輸出空間，145GB 並非足夠的總空間 |
-| 平台 | 作者本機流程以 Windows 11／NVIDIA 為基礎；其他平台需另行確認 |
-| 驗證範圍 | 作者使用 RTX 5090 32GB＋96GB RAM 實際製片；64GB RAM 另以模擬方式驗證。 |
-| 資源限制 | 預留作業系統與其他程式使用的資源；一次只執行一項 GPU 工作。 |
+修改標示：2026-10-25 合併原作者更新至 `8b4c50a1a5e302c981914f7459d0c66e8f99e6a3`，保留上游與先前備份歷史。備份維護者更新 README 開頭提示、INSTALLATION.md、AGENTS.md、BACKUP.md、WORKFLOW-COMPARISON.md、JSON 規範與 Pages；撤去舊 AGENT_SETUP.md 額外提示，使作者原手冊回到本次上游版本。原工作流程、程式、技能本文、範本、作者手冊及原授權檔均保持與該來源 commit 相同（README 另加備份導讀）。新增說明及首頁採 CC BY-NC 4.0，新增 JSON 採 MIT。這次沒有安裝、下載模型或生成影片。
 
-安裝前先讀 [AGENTS.md](AGENTS.md)、[硬體規範資料](hardware-requirements.json)、[作者硬體說明](docs/hardware.md) 和 [第三方授權](THIRD_PARTY_NOTICES.md)。硬體不足或未確認時，先回報差距，不要直接下載大型模型或執行完整安裝。
+來源 commit：[8b4c50a1a5e302c981914f7459d0c66e8f99e6a3](https://github.com/mathruffian-dot/shanshiba-workflow-32gvram-64gram/commit/8b4c50a1a5e302c981914f7459d0c66e8f99e6a3)。查核／同步日期：2026-10-25；不會自動同步上游，未來仍需查當時版本。
 
-[公開說明網站（GitHub Pages）](https://t92016.github.io/shanshiba-workflow-32gvram-64gram/)。Pages 只提供靜態說明，不會在網站上執行 AI 模型。
+## 歷史保留
 
-**授權與修改**：原程式主要依 [MIT](LICENSE)，`tools/flashvsr_cli.py` 依 GPL-3.0-or-later；原文件與素材依 [CC BY-NC 4.0](LICENSE-docs.md)（[授權連結](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hant)）。本備份僅供非商業保存及閱讀，保留原作者與第三方聲明。新增本段說明、AGENTS.md、hardware-requirements.json、BACKUP.md 與 Pages 首頁，並在 AGENT_SETUP.md 加入安裝前提示；原工作流程程式與模型設定未修改。新增說明文件與首頁依 CC BY-NC 4.0，新增 JSON 依 MIT。
-
-備份來源 commit：[`ae7d7d844aa82368875966c1289037d58bc8f8f1`](https://github.com/mathruffian-dot/shanshiba-workflow-32gvram-64gram/commit/ae7d7d844aa82368875966c1289037d58bc8f8f1)。這是 2026-10-21 的備份快照，不會自動同步上游。
-
----
-
+此次更新前備份 commit：068fe7a8042b435065eb458a3fe7df7ffddec171。此次以 merge 保留既有備份與上游完整歷史，未重建 repo 或強制覆寫遠端。沿用原 repo 名稱；中文顯示名稱為「山獅霸 AI 影片工作流｜本機完整版 32GB VRAM＋64GB RAM」。公開 repo：https://github.com/t92016/shanshiba-workflow-32gvram-64gram；Pages：https://t92016.github.io/shanshiba-workflow-32gvram-64gram/。

@@ -1,0 +1,59 @@
+{
+  "schema_version": 2,
+  "repository": "shanshiba-workflow-32gvram-64gram",
+  "display_name": "山獅霸 AI 影片工作流｜本機完整版 32GB VRAM＋64GB RAM",
+  "upstream_url": "https://github.com/mathruffian-dot/shanshiba-workflow-32gvram-64gram",
+  "upstream_commit": "8b4c50a1a5e302c981914f7459d0c66e8f99e6a3",
+  "backup_date": "2026-10-25",
+  "previous_backup_commit": "068fe7a8042b435065eb458a3fe7df7ffddec171",
+  "automatic_sync": false,
+  "original_author": "山獅霸的多重宇宙",
+  "required_attribution": "山獅霸的多重宇宙（https://github.com/mathruffian-dot）",
+  "shared_by": "三師爸",
+  "documentation_license": "CC-BY-NC-4.0",
+  "code_license": "MIT with per-file exceptions",
+  "installation_guide": "INSTALLATION.md",
+  "comparison_guide": "WORKFLOW-COMPARISON.md",
+  "upstream_reference_files": [
+    "README.md",
+    "LICENSE",
+    "LICENSE-docs.md",
+    "THIRD_PARTY_NOTICES.md",
+    "AGENT_SETUP.md",
+    "cloud/README.md",
+    "docs/hardware.md",
+    "docs/02_端到端流程.md",
+    "docs/06_安裝.md",
+    "pipeline/template_local/README.md",
+    "tools/sd25_shot.py"
+  ],
+  "local_full_target": {
+    "nvidia_dedicated_vram_gb": 32,
+    "physical_ram_gb": 64,
+    "storage_type": "NVMe SSD",
+    "base_models_approx_gb": 145,
+    "additional_workspace_required": true
+  },
+  "observed_machine": {
+    "checked_date": "2026-10-25",
+    "gpu": "NVIDIA GeForce GT 710",
+    "dedicated_vram_gb": 2,
+    "physical_ram_gib": 15.9,
+    "suitable_for_local_full": false,
+    "suitable_for_local_16gb_variants": false,
+    "provisional_candidate": "full-cloud after license/budget/resource checks",
+    "must_redetect_on_install": true
+  },
+  "api": {
+    "included_tool": "tools/sd25_shot.py",
+    "model_id": "bytedance/seedance-2-5",
+    "seedance_2_0_mini_tool_verified": false,
+    "case_costs_are_not_current_quotes": true
+  },
+  "verification": {
+    "source_files_preserved": true,
+    "installation_executed": false,
+    "models_downloaded": false,
+    "cloud_or_api_generation_executed": false
+  }
+}

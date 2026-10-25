@@ -4,8 +4,8 @@
   "original_author": "山獅霸的多重宇宙 (mathruffian-dot)",
   "shared_by": "三師爸",
   "upstream_url": "https://github.com/mathruffian-dot/shanshiba-workflow-32gvram-64gram",
-  "upstream_commit": "ae7d7d844aa82368875966c1289037d58bc8f8f1",
-  "backup_date": "2026-10-21",
+  "upstream_commit": "8b4c50a1a5e302c981914f7459d0c66e8f99e6a3",
+  "backup_date": "2026-10-25",
   "automatic_sync": false,
   "hardware": {
     "gpu_vendor": "NVIDIA",
@@ -29,5 +29,15 @@
     "flashvsr_cli": "GPL-3.0-or-later",
     "documentation_media": "CC-BY-NC-4.0",
     "third_party": "THIRD_PARTY_NOTICES.md"
+  },
+  "observed_machine": {
+    "checked_date": "2026-10-25",
+    "gpu": "NVIDIA GeForce GT 710",
+    "dedicated_vram_gb": 2,
+    "physical_ram_gib": 15.9,
+    "suitable_for_local_full": false,
+    "suitable_for_local_16gb_variants": false,
+    "provisional_candidate": "full-cloud after license/budget/resource checks",
+    "must_redetect_on_install": true
   }
 }

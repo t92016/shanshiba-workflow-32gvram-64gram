@@ -1,0 +1,101 @@
+# 山獅霸 AI 影片工作流｜本機完整版 32GB VRAM＋64GB RAM
+
+原分享者：三師爸。依作者要求署名：[山獅霸的多重宇宙（https://github.com/mathruffian-dot）](https://github.com/mathruffian-dot)。
+
+原始專案：[mathruffian-dot/shanshiba-workflow-32gvram-64gram](https://github.com/mathruffian-dot/shanshiba-workflow-32gvram-64gram)。本份為 t92016 個人非商業公開備份，非官方發布。
+
+授權：程式主要 [MIT](https://github.com/t92016/shanshiba-workflow-32gvram-64gram/blob/main/LICENSE)，tools/flashvsr_cli.py 為 GPL-3.0-or-later；文件、技能文字與素材依 [CC BY-NC 4.0](https://github.com/t92016/shanshiba-workflow-32gvram-64gram/blob/main/LICENSE-docs.md)（[授權連結](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hant)），須姓名標示且不得用於商業目的。保留 [THIRD_PARTY_NOTICES.md](https://github.com/t92016/shanshiba-workflow-32gvram-64gram/blob/main/THIRD_PARTY_NOTICES.md)、各檔案授權及 POUND0423 改編技能聲明。本 repo 不包含模型權重；模型與服務各有條款。
+
+修改標示：2026-10-25 合併原作者更新至 `8b4c50a1a5e302c981914f7459d0c66e8f99e6a3`，保留上游與先前備份歷史。備份維護者更新 README 開頭提示、INSTALLATION.md、AGENTS.md、BACKUP.md、WORKFLOW-COMPARISON.md、JSON 規範與 Pages；撤去舊 AGENT_SETUP.md 額外提示，使作者原手冊回到本次上游版本。原工作流程、程式、技能本文、範本、作者手冊及原授權檔均保持與該來源 commit 相同（README 另加備份導讀）。新增說明及首頁採 CC BY-NC 4.0，新增 JSON 採 MIT。這次沒有安裝、下載模型或生成影片。
+
+來源 commit：[8b4c50a1a5e302c981914f7459d0c66e8f99e6a3](https://github.com/mathruffian-dot/shanshiba-workflow-32gvram-64gram/commit/8b4c50a1a5e302c981914f7459d0c66e8f99e6a3)。查核／同步日期：2026-10-25；不會自動同步上游，未來仍需查當時版本。
+
+## 版本定位
+
+本機完整版；NVIDIA 32GB VRAM＋64GB RAM＋NVMe SSD。此次電腦不適用。
+
+# 雲端、本機與付費 API：如何選擇
+
+## 先看本次電腦檢查
+
+2026-10-25 在此次操作的電腦以 nvidia-smi 與 Windows 記憶體 API 唯讀檢查：NVIDIA GeForce GT 710，專用顯存 2GB；實體 RAM 約 15.9GiB（16GB 等級）。本次沒有進行模型安裝、效能跑分或影片生成。
+
+這台電腦不符合本機完整版的 32GB VRAM＋64GB RAM 配置，也不符合另外兩份 16GB VRAM 版本。不要為了嘗試而直接下載約 145GB 的整套本機模型；較合理的候選是全雲端生成、這台做 agent 對話與檔案管理，但要先解決雲端授權、額度、磁碟及網路條件。低解析度剪接／播放仍需先做小型測試，不能保證本機順暢。
+
+這是單次電腦快照，使用者換電腦、換顯卡或再次安裝時，agent 必須重新偵測，不能把它當成使用者所有電腦的永久規格。只發布與工作流判斷相關的 GPU／RAM 摘要，不含電腦名稱、序號或登入資訊。
+
+## 三條路線
+
+- 雲端 Colab＋MiniMax H3：H3 在雲端 GPU 上執行；本機跑不動配音、生圖時，選全雲端模式。需要 Google 帳戶、Colab CLI、可用運算單元、合適 VM 與網路；免費或付費額度、顯卡供應及價格以當時帳戶為準。
+- 本機完整 MiniMax H3：目標配置 NVIDIA 32GB 專用 VRAM＋64GB 以上實體 RAM，NVMe SSD，模型約 145GB，另需環境、工作檔、快取與輸出空間。作者主要使用 RTX 5090 32GB＋96GB RAM，64GB RAM 另以模擬驗證。本次這台 GT 710／16GB 電腦不適用。
+- Kie.ai＋Seedance：另一個付費雲端 API 路線，不是「Colab 版本」也不是本機 H3。新版來源含 tools/sd25_shot.py，使用模型識別 bytedance/seedance-2-5，配合相同分鏡 spec 可做對照。只在使用者明確選用、確認當下價格與上傳素材權利後送件。
+
+## 使用者提供的分享案例
+
+使用者於 2026-10-25 轉貼三師爸的分享：同一支颱風假短劇，比較 Colab＋H3 與 Kie.ai＋Seedance 2.5，並描述從劇本、角色資產、首幀到成片都在 agent 對話中操作。案例稱 Colab 用了 1.43 單元、Google AI Pro 每月附 200 單元；Seedance 2.5 約每秒 10「元」，90 秒花了 1,070「元」。原文未明示「元」的幣別，此處不自行補成台幣或人民幣。
+
+以上是使用者提供的案例記錄，不是本次重測數據、目前服務報價或成本保證。生成時長、素材準備、失敗重試、重拍、配音、上傳下載及不同模型版本都會影響成本，兩組數字不能當成完全相同計費邊界的性能測試。
+
+分享另提到「動作鏡頭用 Seedance 2.0 Mini，其餘用 H3」。這是不同的模型／混合用法，不能把 2.0 Mini 與 2.5 當成同一版本；本次確認的 repo 工具是 Seedance 2.5，未確認內附 2.0 Mini 專用工具。要照做前另查當時 API 的模型、參數、可用性與條款，不沿用其他版本的價格。
+
+## 「不開 ComfyUI」的意思
+
+使用者不必手動開 ComfyUI 網頁或剪輯軟體，agent 可透過腳本處理；H3 路線背後仍會由腳本部署或呼叫 ComfyUI、ffmpeg 等工具，並非完全沒有 ComfyUI 依賴。GitHub Pages 只呈現這份說明，不會提供生成算力。
+
+## 授權與服務限制
+
+repo 可非商業備份，不能推導成所有模型都可以商用或在任何地區執行。作者 cloud/README.md 與 THIRD_PARTY_NOTICES.md 提醒 H3 授權排除美國、歐盟、英國與南韓，作者過去分到的 Colab G4 位於美國或歐盟。真正執行前重查權利方當時授權與本次機房；沒有釐清授權範圍就不要啟動或下載模型。另有 Qwen／Breeze 等非商業限制、AI 生成標示及素材／真人聲音權利要求。
+
+Kie.ai、Google Colab 的服務條款、API 點數與付費設定另行確認；不要在公開 repo 放 KIE_API_KEY、Google 授權碼、模型下載 token 或私人角色素材。本次僅同步備份，不代表已接受或開通這些服務。
+
+## 本次上游更新與驗證界線
+
+本次同步包含 H3 自己依角色參考音念台詞、多人參考音、文字試讀／分鏡工具、Seedance 2.5 API 工具、動作提示詞與選配小臉精修。BreezyVoice 固定音軌改成備案，不要把舊流程當成現行預設。
+
+README 保留作者曾寫「本 repo 尚未從頭實測」的歷史提醒，而較新 docs/03 與範本 README 又記錄 2026-10-24 在 RTX 5090 跑過；那是作者對特定設定的測試，不能推成這台電腦或新的 Colab VM 已通過。本次沒有重做生成驗證。
+
+選配 face_refine 作者只在 ComfyUI 0.40＋RTX 5090 測過，另需約 23GB 模型與節點；不要為了完整安裝而自動裝所有選配。若最新手冊不同段落仍不一致，先比對具體 commit、腳本與範本，最小驗證後再擴大。
+
+## 本機版安裝順序（目前這台請停在資源核對）
+
+1. 先讀 docs/hardware.md、AGENT_SETUP.md、THIRD_PARTY_NOTICES.md、configs/profile.cmd；確認 NVIDIA GPU 架構、驅動與 CUDA 相容性、32GB 專用 VRAM、64GB 以上實體 RAM。
+2. 確認 NVMe 可用空間：模型基礎清單約 145GB，還需 Python／CUDA 環境、快取、工作檔與輸出。不能因磁碟總容量大就推定可用空間足夠。新增選配模型會再增加用量。
+3. 本次 GT 710 2GB VRAM＋16GB RAM 不符合，不要繼續裝 ComfyUI／大型模型，也不要用擴大分頁檔或提高並行數假裝符合硬體。
+4. 換到符合配置的電腦後，再依原作者 AGENT_SETUP.md 的順序安裝前置工具、環境、必要節點及下載清單；保留模型版本與雜湊，先 smoke test，再示範片，最後自己的短片。這次沒有執行上述安裝。
+
+```text
+git clone https://github.com/t92016/shanshiba-workflow-32gvram-64gram.git
+cd shanshiba-workflow-32gvram-64gram
+python setup/detect_hardware.py
+```
+
+本段只列取得備份與硬體偵測；偵測不代表完整模型已安裝。只有換到適合的 Windows／NVIDIA 電腦、依作者手冊裝好後，才在同一個 cmd 視窗套用 configs/profile.cmd、啟動自己的 ComfyUI，再按手冊跑 smoke_test 與 demo_local。一次只跑一項重 GPU 工作。
+
+## 硬體不足的分流
+
+目前這台應先閱讀另一份 shanshiba-workflow-colab 的全雲端指引，不要只切換到 16GB 顯卡版；GT 710 的 2GB VRAM 與約 16GB RAM 也低於那兩版目標配置。雲端仍需核對授權、帳戶、預算、網路與成果空間，不能因本機跑不動就直接開付費機器。
+
+## Kie.ai／Seedance 的選用步驟
+
+新版工具 tools/sd25_shot.py 需要 Python requests；單獨 API 路線不應因此下載本機 H3 模型。先讀同檔說明與 docs/02 的雲端替代段落，使用明確準備好的分鏡檔，先 check／show，再估成本；確認後才 submit。check 是依程式內固定費率計算的估算，不會即時查價。
+
+```text
+python tools/sd25_shot.py check path/to/S01/spec.json
+python tools/sd25_shot.py show path/to/S01/spec.json
+```
+
+只有使用者決定用 API、核對當下服務條款／模型費率與餘額、確認素材上傳權利並在本機私下設定 KIE_API_KEY 後，才使用 submit 及 poll（後兩者與遠端服務互動）。帶台詞的鏡頭依作者規定給角色參考音；真的沒有參考音才依 spec 的 self_voice 明確選用模型自己生聲音。Seedance 參考模式的首幀不是固定第 0 格，不能把 H3 的首幀約束完全照搬。金鑰不寫進工作流 JSON 或公開文件。
+
+## 原作者操作文件
+
+- [README.md](https://github.com/t92016/shanshiba-workflow-32gvram-64gram/blob/main/README.md)
+- [LICENSE](https://github.com/t92016/shanshiba-workflow-32gvram-64gram/blob/main/LICENSE)
+- [LICENSE-docs.md](https://github.com/t92016/shanshiba-workflow-32gvram-64gram/blob/main/LICENSE-docs.md)
+- [THIRD_PARTY_NOTICES.md](https://github.com/t92016/shanshiba-workflow-32gvram-64gram/blob/main/THIRD_PARTY_NOTICES.md)
+- [AGENT_SETUP.md](https://github.com/t92016/shanshiba-workflow-32gvram-64gram/blob/main/AGENT_SETUP.md)
+- [cloud/README.md](https://github.com/t92016/shanshiba-workflow-32gvram-64gram/blob/main/cloud/README.md)
+- [docs/hardware.md](https://github.com/t92016/shanshiba-workflow-32gvram-64gram/blob/main/docs/hardware.md)
+- [docs/02_端到端流程.md](https://github.com/t92016/shanshiba-workflow-32gvram-64gram/blob/main/docs/02_端到端流程.md)
+- [docs/06_安裝.md](https://github.com/t92016/shanshiba-workflow-32gvram-64gram/blob/main/docs/06_安裝.md)
+- [pipeline/template_local/README.md](https://github.com/t92016/shanshiba-workflow-32gvram-64gram/blob/main/pipeline/template_local/README.md)
+- [tools/sd25_shot.py](https://github.com/t92016/shanshiba-workflow-32gvram-64gram/blob/main/tools/sd25_shot.py)

@@ -1,26 +1,25 @@
-## 個人非商業備份與硬體限制（2026-10-21）
+## 山獅霸 AI 影片工作流｜本機完整版 32GB VRAM＋64GB RAM｜個人非商業備份（2026-10-25 更新）
 
-原分享者：三師爸；原作者正式署名為 **[山獅霸的多重宇宙（mathruffian-dot）](https://github.com/mathruffian-dot)**。
-原始專案：[shanshiba-workflow-32gvram-64gram](https://github.com/mathruffian-dot/shanshiba-workflow-32gvram-64gram)。本備份由 [t92016](https://github.com/t92016) 維護，非原作者官方發布。
+原分享者：三師爸。依作者要求署名：[山獅霸的多重宇宙（https://github.com/mathruffian-dot）](https://github.com/mathruffian-dot)。
 
-**本 repo 適用配置：32GB 顯存（VRAM）＋64GB 系統記憶體（RAM）。顯存與系統記憶體是兩項不同規格，不能互相加總替代。**
+原始專案：[mathruffian-dot/shanshiba-workflow-32gvram-64gram](https://github.com/mathruffian-dot/shanshiba-workflow-32gvram-64gram)。本份為 t92016 個人非商業公開備份，非官方發布。
 
-| 安裝前核對 | 要求與限制 |
-|---|---|
-| NVIDIA GPU 專用顯存 | 32GB 等級或以上；仍需核對 GPU 架構、驅動與 CUDA 相容性 |
-| 系統實體記憶體 | 64GB 或以上；實體容量不等於當下可用量 |
-| 儲存空間 | NVMe SSD；模型約 145GB，另須工作檔、快取與輸出空間，145GB 並非足夠的總空間 |
-| 平台 | 作者本機流程以 Windows 11／NVIDIA 為基礎；其他平台需另行確認 |
-| 驗證範圍 | 作者使用 RTX 5090 32GB＋96GB RAM 實際製片；64GB RAM 另以模擬方式驗證。 |
-| 資源限制 | 預留作業系統與其他程式使用的資源；一次只執行一項 GPU 工作。 |
+授權：程式主要 [MIT](https://github.com/t92016/shanshiba-workflow-32gvram-64gram/blob/main/LICENSE)，tools/flashvsr_cli.py 為 GPL-3.0-or-later；文件、技能文字與素材依 [CC BY-NC 4.0](https://github.com/t92016/shanshiba-workflow-32gvram-64gram/blob/main/LICENSE-docs.md)（[授權連結](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hant)），須姓名標示且不得用於商業目的。保留 [THIRD_PARTY_NOTICES.md](https://github.com/t92016/shanshiba-workflow-32gvram-64gram/blob/main/THIRD_PARTY_NOTICES.md)、各檔案授權及 POUND0423 改編技能聲明。本 repo 不包含模型權重；模型與服務各有條款。
 
-安裝前先讀 [AGENTS.md](AGENTS.md)、[硬體規範資料](hardware-requirements.json)、[作者硬體說明](docs/hardware.md) 和 [第三方授權](THIRD_PARTY_NOTICES.md)。硬體不足或未確認時，先回報差距，不要直接下載大型模型或執行完整安裝。
+修改標示：2026-10-25 合併原作者更新至 `8b4c50a1a5e302c981914f7459d0c66e8f99e6a3`，保留上游與先前備份歷史。備份維護者更新 README 開頭提示、INSTALLATION.md、AGENTS.md、BACKUP.md、WORKFLOW-COMPARISON.md、JSON 規範與 Pages；撤去舊 AGENT_SETUP.md 額外提示，使作者原手冊回到本次上游版本。原工作流程、程式、技能本文、範本、作者手冊及原授權檔均保持與該來源 commit 相同（README 另加備份導讀）。新增說明及首頁採 CC BY-NC 4.0，新增 JSON 採 MIT。這次沒有安裝、下載模型或生成影片。
 
-[公開說明網站（GitHub Pages）](https://t92016.github.io/shanshiba-workflow-32gvram-64gram/)。Pages 只提供靜態說明，不會在網站上執行 AI 模型。
+來源 commit：[8b4c50a1a5e302c981914f7459d0c66e8f99e6a3](https://github.com/mathruffian-dot/shanshiba-workflow-32gvram-64gram/commit/8b4c50a1a5e302c981914f7459d0c66e8f99e6a3)。查核／同步日期：2026-10-25；不會自動同步上游，未來仍需查當時版本。
 
-**授權與修改**：原程式主要依 [MIT](LICENSE)，`tools/flashvsr_cli.py` 依 GPL-3.0-or-later；原文件與素材依 [CC BY-NC 4.0](LICENSE-docs.md)（[授權連結](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hant)）。本備份僅供非商業保存及閱讀，保留原作者與第三方聲明。新增本段說明、AGENTS.md、hardware-requirements.json、BACKUP.md 與 Pages 首頁，並在 AGENT_SETUP.md 加入安裝前提示；原工作流程程式與模型設定未修改。新增說明文件與首頁依 CC BY-NC 4.0，新增 JSON 依 MIT。
+**目前電腦快照：GeForce GT 710 2GB VRAM、約 16GB RAM，不符合本機完整版，也不符合 16GB 顯卡版。先讀雲端版的全雲端路線；不要直接下載約 145GB 的本機模型。換電腦後重新偵測。**
 
-備份來源 commit：[`ae7d7d844aa82368875966c1289037d58bc8f8f1`](https://github.com/mathruffian-dot/shanshiba-workflow-32gvram-64gram/commit/ae7d7d844aa82368875966c1289037d58bc8f8f1)。這是 2026-10-21 的備份快照，不會自動同步上游。
+版本定位：本機完整版；NVIDIA 32GB VRAM＋64GB RAM＋NVMe SSD。此次電腦不適用。
+
+- [公開說明網站](https://t92016.github.io/shanshiba-workflow-32gvram-64gram/)
+- [詳細安裝與授權指引](INSTALLATION.md)
+- [雲端／本機／Kie.ai 比較](WORKFLOW-COMPARISON.md)
+- [Agent 接手規範](AGENTS.md) · [JSON 安裝規範](installation-manifest.json)
+
+下方為本次來源版本的原作者 README，分享案例的價格不代表目前報價，備份也不等於已在這台電腦測跑成功。
 
 ---
 
@@ -58,13 +57,17 @@ YouTube 頻道「山獅霸的多重宇宙」的完整製作做法：每支片 1�
 ## 2. 流程一覽
 
 ```
-選題 → 劇本 ─✅─→ 角色定妝照（Qwen-Image 2.1）→ 首幀（Qwen-Image-Edit）─✅─→ 配音候選 → 自動挑音
-     → H3 生成（DMAD 4 步）→ RTX VSR 放大 → 後製（名片、字卡、音效、配樂、字幕）
+選題 → 劇本 ─✅─→ 角色定妝照（Qwen-Image 2.1）→ 首幀（Qwen-Image-Edit）─✅─→ 角色參考音（Breeze 設計，一次）
+     → H3 生成（DMAD 4 步，台詞由 H3 拿角色參考音自己念）→ 聽寫比對台詞 → RTX VSR 放大 → 後製（名片、字卡、音效、配樂、字幕）
      → 組裝 → 片尾 → 自審五遍 → 封面＋YouTube 資訊 ─✅─→ 上片
                                            ✅ = 人工驗收關卡
 ```
 
-全部在本機生成（只有挑音用的「台灣國語答案卷」edge-tts 需要連網，沒網路可改用本地 Breeze）。
+全部在本機生成（只有 BreezyVoice 備案挑音用的「台灣國語答案卷」edge-tts 需要連網，沒網路可改用本地 Breeze）。
+
+> **2026-10-23 預設改變：畫面內的台詞改成「H3 自己念＋角色參考音」**（h3_shot spec 的 `audio.voice_ref`），不再先用 BreezyVoice 配音當固定音軌。原頻道在 RTX 5090 實測（同一場戲三鏡）：聲音像參考音的程度和 TTS 差不多（聲紋 0.66 對 0.68）、三鏡最像同一個人（0.75）、表演比固定音軌生動。BreezyVoice 固定音軌改當備案（H3 念錯抽不出來、數字日期難字、要精準時間點的聲畫同步）。⚠ **本 repo 的成片範本 `make_film.py` 已改成這個預設，但還沒在本 repo 從頭實測**；遇到問題可在 `film.json` 設 `"voice_mode": "fixed"` 退回舊做法。
+> **2026-10-24 新增（選用）：遠景小臉精修 `tools/face_refine.py`**。遠景裡臉小於約 50 px 的角色，放大前追臉、用 H3 低強度重畫臉再貼回，原頻道 3 鏡實測 25–30 px 的臉從一團糊變成認得出本人、不閃，每鏡約 30 秒（只在 ComfyUI 0.40＋RTX 5090 測過；要另裝節點與 23GB 模型，見 [docs/06_安裝.md](docs/06_安裝.md)）。同日也實測了社群微調模型 Singularity V2，**不採用**（參考音較不像本人、會改掉首幀背景），結果在 [docs/03_規則與踩坑.md](docs/03_規則與踩坑.md)。
+
 每一步用哪支腳本、輸入輸出是什麼：[docs/02_端到端流程.md](docs/02_端到端流程.md)；本地角色與首幀做法：[docs/07_本地角色與首幀.md](docs/07_本地角色與首幀.md)。
 
 **裝好之後先跑全本地示範片** `pipeline/demo_local/run_demo.py`：從零做兩個角色、4 鏡、配音、配樂，約 17 秒成片，證明整條工作流在你的電腦上能跑通。
@@ -84,8 +87,11 @@ docs/
   hardware.md               ⭐ 你這個硬體版本：模型組合、啟動參數、實測數據、風險
 tools/                      全域工具（放到 C:\AI\tools）
   h3_shot.py ⭐             分鏡 JSON → 官方格式提示詞 → 格式檢查 → H3 生成
-  make_breezyvoice.cmd ⭐   台詞配音：BreezyVoice 每句 8 候選 → 聽寫＋腔調自動挑
-  gen_image.py              本機 Qwen-Image 2.1／Qwen-Image-Edit 生圖
+  make_breezyvoice.cmd      台詞配音備案：BreezyVoice 每句 8 候選 → 聽寫＋腔調自動挑（預設改由 H3 自己念）
+  gen_image.py              本機 Qwen-Image 2.1／Qwen-Image-Edit 生圖（`--turbo`＝8 步草稿模式）
+  make_whitemodel.py        舞蹈／武打：原片 → 灰色白模影片，當 H3 動作參考
+  make_narration.py         口播／旁白：BreezyVoice 一次念 2–3 句、停頓照標點、自動挑候選
+  cosy_vc.py                換聲：Seedance 等雲端影片的台詞換成角色音色，字的時間不變（選用）
   start_comfy.cmd           啟動 ComfyUI
   img25.py                  OpenAI Image 2.5 生圖／編輯（選用，雲端）
   pron_check.py／pron_compare.py  中文配音聲調審核
@@ -112,13 +118,14 @@ configs/profile.cmd         這個硬體版本的環境變數
 | # | 步驟 | 工具 | 看哪份文件 | 產出 | 要人工看嗎 |
 |---|---|---|---|---|---|
 | 1 | 劇本＋鏡表（每鏡 ≤12 秒） | `agent/skills/shanshiba-drama` | SKILL.md 開頭的版本說明、`docs/03` | `劇本.md` | ✅ 確認劇本 |
+| 1.5 | 生成前試映：16 宮格分鏡草圖＋**文字讀本**（不做 TTS；用字數估片長與每鏡 H3 鏡長＝字數÷3＋2 秒） | `make_storyboard.py`（要 OpenAI 金鑰，沒有就跳過草圖）、`assemble_read.py` | `agent/skills/shanshiba-drama/references/table-read.md` | `preview/讀本試映.mp4`、`讀本_timeline.json` | ✅ 看完說「通過」才做首幀 |
 | 2 | 角色定妝照（單張、灰底、半身） | `gen_image.py`（Qwen-Image 2.1） | `docs/07` §1 | `chars/<角色>.png` | ✅ 挑一張定案 |
 | 3 | 場景母版（空景，之後裁成各鏡景別） | `gen_image.py` | `docs/07` §4 | `masters/*.png` | |
 | 4 | 首幀（附定妝照＋母版裁切，**每鏡照抄角色完整外觀描述**） | `gen_image.py --model qwen-edit --ref` | `docs/07` §2–3 | `first/<鏡>.png` | ✅ 逐張看：臉、服裝、多手多腳、背景有沒有字 |
-| 5 | 角色聲音（一次）→ 台詞配音 | `breeze_batch.py`（設計參考音）→ `make_breezyvoice.cmd` | `docs/03` §5 | `bv/<句>.wav`（已去頭尾靜音） | `needs_review` 的句子聽一次 |
-| 6 | H3 每鏡（DMAD 4 步、只給首幀、台詞當固定音軌；看得到臉又沒台詞的鏡給靜音） | `h3_shot.py`（spec 加 `"draft": true`） | `docs/03` §4、`tools/examples/` | `h3/<鏡>/clip.mp4` | ✅ 抽格看：換臉、多人、鏡頭漂移 |
+| 5 | 角色聲音（一次） | `breeze_batch.py`（設計參考音） | `docs/03` §5 | `voice/ref_<角色>.wav` | ✅ 聽一次、定案後不換 |
+| 6 | H3 每鏡（DMAD 4 步、只給首幀；**有台詞給角色參考音 `audio.voice_ref`、H3 自己念**（兩三人對話同鏡用 `voice_refs` 各給參考音）；看得到臉又沒台詞的鏡給靜音；**`action` 照官方結構寫 50–120 字具體動作**，動作鏡首幀畫動作開始前） | `h3_shot.py`（spec 加 `"draft": true`） | `docs/02` §6「動作寫法」、`docs/03` §4–5、`tools/examples/` | `h3/<鏡>/clip.mp4` | ✅ 抽格看：換臉、多人、鏡頭漂移；**聽寫比對台詞**（H3 會改用詞） |
 | 7 | 配樂（純器樂、多抽幾個 seed，挑人聲殘留最少的） | `gen_music3.py` → `audio-separator` | `docs/02` §9 | `music/*.flac` | |
-| 8 | 放大、剪接（台詞提前 0.2 秒）、配樂壓低（台詞期間 15–30%）、響度、字幕 | `upscale_vsr.py`、ffmpeg | `docs/02` §7、§10（**響度指令照抄，`alimiter` 要 `level=false`**） | `cut/<片名>_1080p.mp4` | |
+| 8 | 放大、剪接（H3 自己念的台詞不提前；BreezyVoice 備案台詞提前 0.2 秒）、配樂壓低（台詞期間 15–30%）、響度、字幕 | `upscale_vsr.py`、ffmpeg | `docs/02` §7、§10（**響度指令照抄，`alimiter` 要 `level=false`**） | `cut/<片名>_1080p.mp4` | |
 | 9 | 片尾（工具名單＋AI 生成標示） | `templates/ending/render_ending.py` | `templates/ending/README.md` | `ending.mp4` | |
 | 10 | 自審五遍（抽格、ASR、雜訊、黑畫面與響度、切點） | 參考 `pipeline/example_D-7/review.py`、`noise_scan.py`、`stt.py` | `docs/04_自審清單.md` | `review/` | ✅ 最後一定給人看成片 |
 
@@ -134,7 +141,7 @@ configs/profile.cmd         這個硬體版本的環境變數
 4. **單鏡 ≤12 秒**；15 秒會漂移、自己切鏡。
 5. **不說話的鏡頭給靜音引導音軌**，否則角色會自己嘟囔。
 6. **畫面上的中文一律後製疊字**，H3 會把字寫成亂碼。
-7. **台灣腔配音**：Breeze 設計角色聲音（一次）→ **BreezyVoice** 用它念每句台詞（每句 8 候選，約 2.5 秒一個）→ 聽寫全對＋跟台灣國語參考音比聲調自動挑；念不準的字直接標注音（`連假[:ㄐㄧㄚ4]`）。
+7. **台詞讓 H3 拿角色參考音自己念**（2026-10-23 起）：Breeze 設計角色聲音（一次）→ spec 寫 `audio.voice_ref` → 聽寫比對原文（H3 會改用詞，例：「二十四號」→「二十四日」）、抽 2 個 seed。念錯抽不出來的句子才改用 **BreezyVoice** 固定音軌（每句 8 候選、念不準的字標注音 `連假[:ㄐㄧㄚ4]`）。
 8. **低頭、轉身後臉會換人** → 再生一張「動作結束時」的畫面當尾幀鎖住（原頻道用 Image 2.5；本地可用 Qwen-Image-Edit 附定妝照）。
 9. **先做最難的一鏡再批次**，不要整片生完才發現共通問題。
 10. **不合格就重拍到合格**，不靠剪掉躲；給人看並排影片，數字只當備註。
@@ -144,10 +151,11 @@ configs/profile.cmd         這個硬體版本的環境變數
 | 東西 | 原因 | 你要自己準備 |
 |---|---|---|
 | 原頻道的角色定妝照、轉面圖、表情表 | 頻道角色資產 | 用本機 Qwen-Image 2.1 為自己的角色做單張半身定妝照（見 [07_本地角色與首幀.md](docs/07_本地角色與首幀.md)） |
-| 配音參考音 | 含本人授權克隆聲音 | 自己錄或用 Breeze 設計，台詞一律 BreezyVoice |
+| 配音參考音 | 含本人授權克隆聲音 | 自己錄或用 Breeze 設計；台詞預設由 H3 拿參考音自己念，BreezyVoice 為備案 |
 | 模型權重 | 檔案大、各有授權 | 照 [AGENT_SETUP.md](AGENT_SETUP.md) 第 3 節下載（約 150GB） |
 | 成片影片 | 檔案大 | 看頻道 |
 | OpenAI 金鑰（選用） | 預設不用；想改用雲端 Image 2.5 生首幀才需要 | 設環境變數 `OPENAI_API_KEY`，用 `tools/img25.py` |
+| Kie.ai 金鑰（選用） | 想用雲端 Seedance 2.5 生影片才需要（約 63 點／秒，200 點 ≈ 1 美元） | 設環境變數 `KIE_API_KEY`，用 `tools/sd25_shot.py`；有台詞的鏡一定給角色參考音 |
 | Google AI 方案／Colab 運算單元（選用） | 本機跑不動 H3 時才需要 | 見 [cloud/README.md](cloud/README.md) |
 
 （音效有附：`sfx/` 裡 58 個 Freesound CC0 音效。）
